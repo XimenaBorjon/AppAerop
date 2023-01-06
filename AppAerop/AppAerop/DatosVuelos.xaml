@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:AppAerop.ViewModels"
+             x:Class="AppAerop.DatosVuelos" Background="white">
+    <ContentPage.BindingContext>
+        <vm:VuelosViewModels></vm:VuelosViewModels>
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Datos del Vuelo" FontSize="60" FontFamily="CalligraphyFLF" TextColor="#05A6A6" HorizontalOptions="Center" VerticalOptions="Start" Margin="10"></Label>
+            <Label Text="Numero del Vuelo" FontSize="Title" TextColor="#05A6A6" FontFamily="CalligraphyFLF"  Padding="10,50,30,10"/>
+            <Entry Text="{Binding vuelos.ClaveVuelo}" Keyboard="Text" TextColor="#05A6A6" Margin="10,0,20,0"></Entry>
+            <Label Text="Destino" FontSize="Title" FontFamily="CalligraphyFLF"  Padding="10,10,30,10" TextColor="#05A6A6"/>
+            <Entry Text="{Binding vuelos.Destino}" Keyboard="Text" TextColor="#05A6A6" Margin="10,0,20,0"></Entry>
+            <Label Text="Hora" FontSize="Title" FontFamily="CalligraphyFLF"  Padding="10,10,30,10" TextColor="#05A6A6"/>
+            <DatePicker Date="{Binding vuelos.Hora}" TextColor="#05A6A6" Margin="10,0,20,0"></DatePicker>
+            <Label Text="Status" FontSize="Title" FontFamily="CalligraphyFLF"  TextColor="#05A6A6" Padding="10,10,30,10"/>
+            <Picker SelectedItem="{Binding vuelos.Status}" Margin="10">
+                <Picker.Items>
+                    <x:String>CANCELADO</x:String>
+                    <x:String>ABORDANDO</x:String>
+                    <x:String>DEMORADO</x:String>
+                </Picker.Items>
+            </Picker>
+            <Button Command="{Binding GuardarCommand}" BorderColor="White" BorderWidth="3" CornerRadius="20" Text="Enviar" Background="#012840" Margin="20" TextColor="White"></Button>
+            <Label Text="{Binding Error}" TextColor="#05A6A6" FontFamily="CalligraphyFLF"  FontSize="20"></Label>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

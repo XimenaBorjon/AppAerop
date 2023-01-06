@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:AppAerop.ViewModels"
+             x:Class="AppAerop.EliminarVuelos">
+    <ContentPage.BindingContext>
+        <vm:VuelosViewModels></vm:VuelosViewModels>
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <StackLayout Background="white" Margin="10,10,10,0">
+            <Label FontSize="70" FontFamily="Canela" TextColor="#05A6A6" Margin="40" HorizontalOptions="Center">Eliminar Vuelo</Label>
+                <Label FontSize="40" FontFamily="Canela" TextColor="#05A6A6" Margin="10">Escriba el Id del vuelo</Label>
+            <Entry  Keyboard="Numeric" TextColor="#05A6A6" Text="{Binding vuelos.IdVuelo}" Margin="10,0,10,40"></Entry>
+            <Button Background="#012840" VerticalOptions="Center" BorderColor="#1B8EF2" BorderWidth="3" CornerRadius="20" TextColor="White" Margin="20" Command="{Binding EliminarCommand}" Text="Si"></Button>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
